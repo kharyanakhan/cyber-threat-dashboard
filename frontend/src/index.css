@@ -1,0 +1,90 @@
+/* Full /src/index.css with Scroll Fix and Polish */
+
+/* General Base Styles */
+body {
+    margin: 0;
+    font-family: 'Roboto Mono', monospace;
+    background: linear-gradient(180deg, #0a0a2a 0%, #000000 100%);
+    overflow-x: hidden;  /* Block horizontal scroll */
+    overflow-y: auto;    /* Allow vertical scroll */
+    color: #d1d1d1;
+  }
+  
+  /* Links */
+  a {
+    color: #00f0ff;
+    text-decoration: none;
+  }
+  
+  /* Box Sizing Reset */
+  * {
+    box-sizing: border-box;
+  }
+  
+  /* Particle Background (Canvas) */
+  #tsparticles {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+  
+  /* Main app sits above particles */
+  #root {
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Scrollbar Styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: rgba(10, 10, 30, 0.5);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #00cfff;
+    border-radius: 4px;
+  }
+  
+  /* Button Smooth Hover */
+  button {
+    transition: all 0.2s ease-in-out;
+  }
+  
+  button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
+  }
+  
+  /* Smooth Transition for Cards and Tabs */
+  .mantine-Card-root,
+  .mantine-Tabs-tab {
+    transition: all 0.3s ease;
+  }
+  
+  /* Input Field Styling */
+  input {
+    background-color: rgba(10, 10, 30, 0.9);
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    color: #00f0ff;
+  }
+  
+  /* Threat Severity Badges (Optional global styles if needed) */
+  .badge-critical {
+    background-color: #ff4d4f;
+    color: white;
+  }
+  .badge-high {
+    background-color: #ffa940;
+    color: white;
+  }
+  .badge-medium {
+    background-color: #ffc53d;
+    color: black;
+  }
+  .badge-low {
+    background-color: #73d13d;
+    color: black;
+  }
+  

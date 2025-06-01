@@ -1,0 +1,75 @@
+import React, { useState } from 'react';
+import { Box, Textarea, Button, Stack, Text } from '@mantine/core';
+
+const AnalystNotes: React.FC = () => {
+  const [notes, setNotes] = useState<string[]>([]);
+  const [newNote, setNewNote] = useState('');
+
+  const handleAddNote = () => {
+    if (newNote.trim() !== '') {
+      setNotes([...notes, newNote.trim()]);
+      setNewNote('');
+    }
+  };
+
+  return (
+    <Box
+      style={{
+        backgroundColor: 'rgba(10,10,20,0.8)',
+        padding: '1em',
+        borderRadius: '10px',
+        border: '1px solid #00cfff',
+      }}
+    >
+      <Textarea
+        placeholder="Add analyst note..."
+        value={newNote}
+        onChange={(e) => setNewNote(e.currentTarget.value)}
+        autosize
+        minRows={2}
+        style={{
+          marginBottom: '1em',
+          backgroundColor: 'rgba(5,5,10,0.8)',
+          color: '#00f0ff',
+        }}
+      />
+
+      <Button
+        variant="outline"
+        onClick={handleAddNote}
+        style={{
+          borderColor: '#00cfff',
+          color: '#00cfff',
+        }}
+        size="xs"
+        radius="md"
+      >
+        Post Note
+      </Button>
+
+      <Stack spacing="xs" style={{ marginTop: '1em' }}>
+        {notes.length === 0 ? (
+          <Text size="sm" color="dimmed">
+            No notes yet.
+          </Text>
+        ) : (
+          notes.map((note, idx) => (
+            <Box
+              key={idx}
+              style={{
+                padding: '0.5em',
+                backgroundColor: 'rgba(20,20,30,0.8)',
+                borderRadius: '5px',
+                color: '#d1d1d1',
+              }}
+            >
+              {note}
+            </Box>
+          ))
+        )}
+      </Stack>
+    </Box>
+  );
+};
+
+export default AnalystNotes;

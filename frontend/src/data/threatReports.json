@@ -1,0 +1,30 @@
+[
+    {
+      "id": "rpt1",
+      "title": "APT29 RDP Exploitation Activity",
+      "source": "NSA Report",
+      "date": "2023-11-10",
+      "summary": "Analysis of RDP brute-force activity attributed to APT29 across global sectors.",
+      "relatedIndicators": ["RDP", "Brute-force", "8.8.8.8", "Credential Dumping"],
+      "link": "https://nsa.gov/reports/apt29_rdp_activity"
+    },
+    {
+      "id": "rpt2",
+      "title": "Sodinokibi Ransomware Campaign",
+      "source": "Mandiant Threat Intel",
+      "date": "2022-08-05",
+      "summary": "Tracking Sodinokibi ransomware payloads exploiting open RDP ports.",
+      "relatedIndicators": ["Sodinokibi", "RDP", "Ransomware"],
+      "link": "https://fireeye.com/reports/sodinokibi_ransomware"
+    },
+    {
+      "id": "rpt3",
+      "title": "Global Threats to ICS Networks",
+      "source": "Dragos Intelligence",
+      "date": "2023-05-19",
+      "summary": "Intrusion analysis related to energy sector cyber attacks leveraging exposed SSH.",
+      "relatedIndicators": ["SSH", "ICS", "Industrial Control Systems", "Energy Sector"],
+      "link": "https://dragos.com/reports/ics-threats"
+    }
+  ]
+  
