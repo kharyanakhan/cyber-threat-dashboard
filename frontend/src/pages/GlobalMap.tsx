@@ -1,5 +1,5 @@
-import React from 'react';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import React, { useEffect } from 'react';
+import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 
 const attackLocations = [
   { lat: 51.5, lng: -0.09, title: 'Attack from London' },
@@ -9,9 +9,21 @@ const attackLocations = [
   { lat: 55.75, lng: 37.61, title: 'Attack from Moscow' },
 ];
 
+// Custom hook to fix Leaflet map resize
+const ResizeMap = () => {
+  const map = useMap();
+  useEffect(() => {
+    setTimeout(() => {
+      map.invalidateSize();
+    }, 100); // allow tab animation to finish
+  }, [map]);
+  return null;
+};
+
 const GlobalAttackMap: React.FC = () => {
   return (
-    <MapContainer center={[20, 0]} zoom={2} style={{ height: '70vh', borderRadius: '8px' }}>
+    <MapContainer center={[20, 0]} zoom={2} style={{ height: '70vh', width: '100%', borderRadius: '8px' }}>
+      <ResizeMap />
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />

@@ -3,7 +3,7 @@ import { Container, Tabs, Group, Card, Text, SimpleGrid, Badge } from '@mantine/
 import Header from '../components/Header';
 import SearchBar from '../components/SearchBar';
 import ThreatKPIs from '../components/ThreatKPIs';
-import GlobalAttackMap from '../components/GlobalAttackMap';
+import GlobalAttackMap from '../pages/GlobalMap';
 import ThreatActorProfile from '../components/ThreatActorProfile';
 import ThreatCharts from '../components/ThreatCharts';
 import TopTTPsChart from '../components/TopTTPsChart';
